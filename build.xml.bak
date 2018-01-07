@@ -23,11 +23,11 @@
   </target> -->
 
  <path id="compile.classpath">
-   <!-- <fileset dir="${tcserver.home}/bin">
+   <fileset dir="${tcserver.home}/bin">
       <include name="*.jar"/>
-    </fileset> -->
+    </fileset>
     <pathelement location="${tcserver.home}/lib"/>
-    <fileset dir="${basedir}/WebContent/WEB-INF/lib">
+    <fileset dir="${tcserver.home}/lib">
       <include name="*.jar"/>
     </fileset>
   </path>
@@ -69,11 +69,11 @@
     <jar jarfile="${dist.home}/${app.name}.war"
          basedir="${work.home}"/>
   </target>
-  <!-- <target name="adv" depends="run" >
+  <target name="adv" depends="dist" >
 		 <echo>Advanced Tasks</echo>
-         <scp file="${build_dir}/${jar_dir}/${file_name}.jar" todir="${user}:${pass}@192.168.0.100:/home/gangadhar" trust="true"/>
-          <sshexec host="192.168.0.100" username="${user}" password="${pass}" command="df -h" trust="true"/> 
-   </target> -->
+         <scp file="${dist.home}/${app.name}.war" todir="${user}:${pass}@192.168.0.100:/root/Documents" trust="true"/>
+          <!-- <sshexec host="192.168.0.100" username="${user}" password="${pass}" command="df -h" trust="true"/> -->
+   </target> 
 
   
 </project> 
