@@ -1,4 +1,4 @@
-<project name="My Project" default="adv" basedir=".">
+<project name="My Project" default="dist" basedir=".">
   <!-- Define the properties used by the build -->
   <property name="app.name"      value="hello"/>
   <property name="tcserver.home" value="${basedir}/AplicationServer/apache-tomcat-7.0.69" />
@@ -69,11 +69,11 @@
     <jar jarfile="${dist.home}/${app.name}.war"
          basedir="${work.home}"/>
   </target>
- <!--  <target name="adv" depends="dist" >
-		 <echo>Advanced Tasks</echo>
+  <target name="jarcopy" depends="dist" >
+		 <echo>Copying Jar</echo>
          <scp file="${dist.home}/${app.name}.war" todir="${user}:${pass}@192.168.0.105:/root/Documents" trust="true"/>
-           <sshexec host="192.168.0.100" username="${user}" password="${pass}" command="df -h" trust="true"/> 
-   </target> --> 
+          <!-- <sshexec host="192.168.0.100" username="${user}" password="${pass}" command="df -h" trust="true"/> -->
+   </target>  
 
   
 </project> 
