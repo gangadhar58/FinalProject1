@@ -23,11 +23,11 @@
   </target> -->
 
  <path id="compile.classpath">
-   <!-- <fileset dir="${tcserver.home}/bin">
+   <fileset dir="${tcserver.home}/bin">
       <include name="*.jar"/>
-    </fileset> -->
-    <pathelement location="${basedir}/WebContent/WEB-INF/lib"/>
-    <fileset dir="${basedir}/WebContent/WEB-INF/lib">
+    </fileset>
+    <pathelement location="${tcserver.home}/lib"/>
+    <fileset dir="${tcserver.home}/lib">
       <include name="*.jar"/>
     </fileset>
   </path>
